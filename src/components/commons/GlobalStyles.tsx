@@ -3,8 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
   }
 
   body {
@@ -12,9 +10,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a, button {
-    text-decoration: none;
-    border: none;
-    background-color: transparent;
     cursor: pointer;
   }
 `;
