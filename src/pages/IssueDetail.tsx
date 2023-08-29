@@ -1,6 +1,7 @@
 import { useRouteLoaderData } from 'react-router-dom';
 import { styled } from 'styled-components';
 import type { IssueDetail } from 'types/issue';
+import IssueBody from 'components/issue/IssueBody';
 import IssueInfo from 'components/issue/IssueInfo';
 import UserAvatar from 'components/issue/UserAvatar';
 
@@ -13,7 +14,7 @@ const IssueDetailComponent = () => {
         <UserAvatar user={issueWithBody.user} />
         <IssueInfo issue={issueWithBody} />
       </StyledDiv>
-      <div>{issueWithBody.body}</div>
+      <IssueBody body={issueWithBody.body} />
     </>
   );
 };
