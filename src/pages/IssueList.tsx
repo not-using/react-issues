@@ -4,6 +4,8 @@ import { styled } from 'styled-components';
 import type { Issue } from 'types/issue';
 import IssueInfo from 'components/issue/IssueInfo';
 import InfinityIssues from 'components/issue/InfinityIssues';
+import Advertisement from 'components/commons/Advertisement';
+import { ITEM_PER_ADS } from 'configs/advertisement';
 
 const IssueList = () => {
   const [issues, setIssues] = useState<Issue[]>(useLoaderData() as Issue[]);
@@ -15,10 +17,13 @@ const IssueList = () => {
 
   return (
     <Wrapper>
-      {issues.map((issue) => (
-        <StyledLink key={issue.id} to={`${issue.number}`}>
-          <IssueInfo issue={issue} />
-        </StyledLink>
+      {issues.map((issue, index) => (
+        <>
+          <StyledLink key={issue.number} to={`${issue.number}`}>
+            <IssueInfo issue={issue} />
+          </StyledLink>
+          {(index + 1) % ITEM_PER_ADS === 0 ? <Advertisement index={index} /> : null}
+        </>
       ))}
       <InfinityIssues page={page} addIssues={addIssues} />
     </Wrapper>
