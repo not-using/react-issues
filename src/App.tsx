@@ -23,6 +23,7 @@ const App = () => {
       />
       <Route
         path=":id"
+        id="number"
         loader={({ params }) => getIssueDetailApi(params.id!)}
         element={<IssueDetail />}
         errorElement={<NotFound />}

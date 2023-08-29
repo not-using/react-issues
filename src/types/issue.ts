@@ -8,3 +8,7 @@ export interface Issue {
   created_at: string;
   comments: number;
 }
+
+export interface IssueDetail extends Issue {
+  body: string;
+}
