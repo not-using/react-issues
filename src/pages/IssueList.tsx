@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { styled } from 'styled-components';
 import type { Issue } from 'types/issue';
 import IssueInfo from 'components/issue/IssueInfo';
+import InfinityIssues from 'components/issue/InfinityIssues';
 
 const IssueList = () => {
-  const [issues] = useState<Issue[]>(useLoaderData() as Issue[]);
+  const [issues, setIssues] = useState<Issue[]>(useLoaderData() as Issue[]);
+  const page = useRef(1);
+
+  const addIssues = (newIssues: Issue[]) => {
+    setIssues([...issues, ...newIssues]);
+  };
 
   return (
     <Wrapper>
@@ -14,6 +20,7 @@ const IssueList = () => {
           <IssueInfo issue={issue} />
         </StyledLink>
       ))}
+      <InfinityIssues page={page} addIssues={addIssues} />
     </Wrapper>
   );
 };
@@ -22,7 +29,7 @@ export default IssueList;
 
 const Wrapper = styled.div`
   width: 90%;
-  min-height: 100vh;
+  min-height: 90vh;
 `;
 
 const StyledLink = styled(Link)`
