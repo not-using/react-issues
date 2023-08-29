@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { styled } from 'styled-components';
 import type { Issue } from 'types/issue';
@@ -18,12 +18,12 @@ const IssueList = () => {
   return (
     <Wrapper>
       {issues.map((issue, index) => (
-        <>
-          <StyledLink key={issue.number} to={`${issue.number}`}>
+        <Fragment key={issue.number}>
+          <StyledLink to={`${issue.number}`}>
             <IssueInfo issue={issue} />
           </StyledLink>
           {(index + 1) % ITEM_PER_ADS === 0 ? <Advertisement index={index} /> : null}
-        </>
+        </Fragment>
       ))}
       <InfinityIssues page={page} addIssues={addIssues} />
     </Wrapper>
