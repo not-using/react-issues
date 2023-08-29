@@ -13,6 +13,8 @@ export const GithubIssues = (
     state?: 'open' | 'closed' | 'all';
     direction?: 'asc' | 'desc';
     issue_number?: number;
+    per_page?: number;
+    page?: number;
   },
 ) => {
   const baseUrl = `/repos/${OWNER}/${REPOSITORY}/issues`;

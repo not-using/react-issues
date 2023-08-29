@@ -17,7 +17,7 @@ const App = () => {
     <Route element={<Layout />}>
       <Route
         index
-        loader={getIssueListApi}
+        loader={() => getIssueListApi(1)}
         element={<IssueList />}
         errorElement={<Error />}
       />
