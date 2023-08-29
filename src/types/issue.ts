@@ -1,11 +1,10 @@
+import { User } from './user';
+
 export interface Issue {
   id: number;
   number: number;
   title: string;
-  user: {
-    login: string;
-    avatar_url: string;
-  };
+  user: User;
   created_at: string;
   comments: number;
 }
