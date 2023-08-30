@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+# Most Comments!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+특정 리포지토리(facebook/react)의 이슈 목록을 확인하는 페이지입니다.
 
-## Available Scripts
+- [배포링크](http://react-issues.s3-website.ap-northeast-2.amazonaws.com/)
+- [원티드 프리온보딩 인턴십 8월](https://www.wanted.co.kr/events/pre_ob_fe_12)의 둘째주 과제를 수행한 결과물입니다.
+- 개발 기간 : 약 2일 (2023.08.29 ~ 2023.08.30)
+- 개발 인원 : [@notusing11](https://github.com/notusing11)
+  + 환경 세팅에 도움주신 분 : [@HWAHAEBANG](https://github.com/HWAHAEBANG)
 
-In the project directory, you can run:
+## 실행 방법
 
-### `npm start`
+- 실행하기 위해서는 Node.js가 설치된 환경이 필요합니다. (LTS, 18.17.0 버전 기준)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 해당 레포지토리를 클론 후 디렉토리로 이동합니다.
+- `npm install & npm start` 명령어로 실행하실 수 있습니다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+  git clone https://github.com/notusing11/react-issues.git && cd react-issues;
+  npm install & npm start;
+```
 
-### `npm test`
+## 주요 기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 지정한 조건에 맞는 데이터 요청 및 표시 (코멘트 수 많은 순, 열려있는 이슈 한정)
+- 이슈 목록 및 상세 화면 기능 구현
+- 에러 화면 구현
+- Markdown 형식의 본문의 HTML 변환
+- 무한 스크롤 및 데이터 요청 중 로딩 표시
+- 특정 이슈 개수마다 정해진 광고 이미지 및 링크 표시
 
-### `npm run build`
+## 기술 스택 및 사용한 라이브러리
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Create React App (+ typescript)
+- react-router-dom : client-side routing용
+- octokit : Github api 활용을 위한 SDK
+- styled-components : 컴포넌트 기반 css 처리
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 폴더 구조
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src
+├── apis
+├── components
+│   ├── commons
+│   └── issue
+├── configs
+├── hooks
+├── pages
+├── types
+└── utils
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 폴더 구조별 설명
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- api : 네트워크 api 호출관련 로직
+- components : 도메인별 분리
+- configs : 정책 및 설정
+- hooks : api 호출과 상관없는 로직
+- pages : 페이지를 구성하는 컴포넌트
+- utils : 커스텀훅이 아닌 함수들
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 추가 정보
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 배포
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 해당 프로젝트는 AWS S3를 통해 배포되었습니다. [배포링크](http://react-issues.s3-website.ap-northeast-2.amazonaws.com/)
