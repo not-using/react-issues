@@ -28,6 +28,7 @@ const App = () => {
         element={<IssueDetail />}
         errorElement={<NotFound />}
       />
+      <Route path="*" element={<NotFound />} />
     </Route>,
   );
   return <RouterProvider router={createBrowserRouter(router)} />;
