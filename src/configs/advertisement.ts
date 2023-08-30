@@ -1,4 +1,4 @@
-export const ITEM_PER_ADS = 5;
+export const ITEM_PER_ADS = 4;
 
 export const SPONSERS = [
   {
