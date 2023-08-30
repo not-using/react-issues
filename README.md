@@ -29,6 +29,13 @@
 - 무한 스크롤 및 데이터 요청 중 로딩 표시
 - 특정 이슈 개수마다 정해진 광고 이미지 및 링크 표시
 
+## Preview
+|이슈 목록|이슈 상세|
+|---|---|
+|!["/" 페이지 예시](/docs/list.png)|!["/:id" 페이지 예시](/docs/detail.png)|
+|![무한스크롤](/docs/list.gif)|![목록 선택](/docs/list2.gif)|
+
+
 ## 기술 스택 및 사용한 라이브러리
 
 - Create React App (+ typescript)
