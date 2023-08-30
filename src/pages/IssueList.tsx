@@ -22,7 +22,9 @@ const IssueList = () => {
           <StyledLink to={`${issue.number}`}>
             <IssueInfo issue={issue} />
           </StyledLink>
-          {(index + 1) % ITEM_PER_ADS === 0 ? <Advertisement index={index} /> : null}
+          {(index + 1) % ITEM_PER_ADS === 0 ? (
+            <Advertisement index={Math.ceil(index / ITEM_PER_ADS)} />
+          ) : null}
         </Fragment>
       ))}
       <InfinityIssues page={page} addIssues={addIssues} />
