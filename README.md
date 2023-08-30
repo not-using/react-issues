@@ -42,6 +42,7 @@
 - react-router-dom : client-side routing용
 - octokit : Github api 활용을 위한 SDK
 - styled-components : 컴포넌트 기반 css 처리
+- remark, remark-html : 마크다운 파싱 및 html 변환
 
 ## 폴더 구조
 
